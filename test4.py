@@ -55,13 +55,15 @@ while True:
         except Exception:
             watch_video_link2 = browser.find_element(By.XPATH, "//*[starts-with(@id, 'start-ads-')]/span[1]/font/font")
             watch_video_link2.click()
+        except Exception:
+            watch_video_link3 = browser.find_element(By.XPATH, "//*[starts-with(@id, 'start-ads-')]/span[1]").click()
         
 
         # Wait for 1 second
         time.sleep(2)
 
         # Find the "Приступить к просмотру" button
-        start_watching_button = browser.find_element(By.XPATH, "//*[starts-with(@id, 'check-task-')]/font/font")
+        start_watching_button = browser.find_element(By.XPATH, "//*[starts-with(@id, 'check-task-')]")
 
         # Click on the "Приступить к просмотру" button
         start_watching_button.click()
